@@ -1,3 +1,2 @@
-* [首页](README.md)
+* [首页](/)
 * [VB](VB.md)
-# TEST
