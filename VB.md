@@ -87,7 +87,7 @@ Loop {While|Until} 条件
 ```vb
 While 条件
 
-end While
+Wend
 ```
 
 ## 函数
