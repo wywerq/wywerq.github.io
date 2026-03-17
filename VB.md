@@ -138,6 +138,12 @@ end While
 
 ### 选择排序
 
+![](https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif)
+
 ### 冒泡排序
 
+![](https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif)
+
 ### 直接排序
+
+![](https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif)
