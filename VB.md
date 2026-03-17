@@ -77,7 +77,8 @@ Next
 Do {While|Until} 条件
 
 Loop
-
+```
+```vb
 Do
 
 Loop {While|Until} 条件
@@ -142,7 +143,7 @@ end While
 
 ### 冒泡排序
 
-```vb
+```VB
 For i = 1 To Length
     For j = 1 To Length - i
         If a(j) > a(j + 1) Then
