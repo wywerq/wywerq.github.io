@@ -143,7 +143,7 @@ Wend
 
 ### 冒泡排序
 
-```VB
+```vb
 For i = 1 To Length
     For j = 1 To Length - i
         If a(j) > a(j + 1) Then
@@ -176,6 +176,6 @@ Next
 
 ![](https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif)
 
-### 插入排序/直接排序
+<!-- ### 插入排序/直接排序
 
-![](https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif)
+![](https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif) -->
