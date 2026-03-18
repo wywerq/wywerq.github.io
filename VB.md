@@ -132,7 +132,7 @@ Wend
 | 取小时       | `Hour(Time)`                       | 取当前小时示例：`Hour(Now)`                                                                                                                                                                                                               |
 | 取分钟       | `Minute(Time)`                     |
 | 取秒钟       | `Second(Time)`                     |
-| 格式化       | `Format(Expression, Format)`       |
+| 格式化       | `Format(Expression, Format)`       | 格式化日期示例：`Format(Date, "yyyy.mm.dd")` 返回： `2026.03.17`                                                                                                                                                                                            |
 | 增加时间间隔 | `DateAdd(Interval, Number, Date)`  | `Interval`：单位<br>如：<br> yyyy - 年<br>q - 季度<br>m - 月<br>y - 当年的第几天<br>d - 日<br>w - 当周的第几天<br>ww - 周<br>h - 小时<br>n - 分钟<br>s - 秒<br>`number`：要增加的单位数<br><br>取一小时后时间示例：`DateAdd("h", 1, Now)` |
 | 取时间间隔   | `DateDiff(Interval, Date1, Date2)` |                                                                                                                                                                                                                                           |
 
