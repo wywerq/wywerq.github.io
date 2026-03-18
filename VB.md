@@ -103,6 +103,8 @@ Wend
 | 函数功能               | 语法格式                           | 说明                                                                            |
 | ---------------------- | ---------------------------------- | ------------------------------------------------------------------------------- |
 | 字符串转数值           | `Val(String)`                      | 从左往右依次取出数值，如果碰到非数值则停止                                      |
+| 取绝对值               | `Abs(Number)`                      |
+| 取平方根               | `Sqr(Number)`                      |
 | 取整                   | `Int(Number)`                      | 正数去掉小数点后面的数字，负数取偏小的整数。如-1.25取的是-2，如-98.9取的是-99。 |
 | 随机数                 | `Rnd`                              | 区间：[0, 1)                                                                    |
 | 初始化随机数生成器种子 | `Randomize`                        |
@@ -132,7 +134,7 @@ Wend
 | 取小时       | `Hour(Time)`                       | 取当前小时示例：`Hour(Now)`                                                                                                                                                                                                               |
 | 取分钟       | `Minute(Time)`                     |
 | 取秒钟       | `Second(Time)`                     |
-| 格式化       | `Format(Expression, Format)`       | 格式化日期示例：`Format(Date, "yyyy.mm.dd")` 返回： `2026.03.17`                                                                                                                                                                                            |
+| 格式化       | `Format(Expression, Format)`       | 格式化日期示例：`Format(Date, "yyyy.mm.dd")` 返回： `2026.03.17`                                                                                                                                                                          |
 | 增加时间间隔 | `DateAdd(Interval, Number, Date)`  | `Interval`：单位<br>如：<br> yyyy - 年<br>q - 季度<br>m - 月<br>y - 当年的第几天<br>d - 日<br>w - 当周的第几天<br>ww - 周<br>h - 小时<br>n - 分钟<br>s - 秒<br>`number`：要增加的单位数<br><br>取一小时后时间示例：`DateAdd("h", 1, Now)` |
 | 取时间间隔   | `DateDiff(Interval, Date1, Date2)` |                                                                                                                                                                                                                                           |
 
