@@ -22,9 +22,19 @@ MyApp
 └─ settings.gradle
 ```
 
-### 应用清单
+## build.gradle
+
+### 模块
+
+- 命名空间
+- 编译Sdk版本
+- 依赖
+
+## 应用清单
 
 定义：
+
+- 命名空间
 - 权限
 - Activity
 - Service
