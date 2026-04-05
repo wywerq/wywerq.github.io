@@ -1,6 +1,8 @@
 ## FreeRTOS
 
 ```c++
+#include <Arduino.h>
+
 void task1(void *pvParameters)
 {
   while (1)
@@ -36,6 +38,7 @@ void setup()
 - DallasTemperature
 
 ```c++
+#include <Arduino.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
@@ -67,6 +70,7 @@ void loop() {
 ### 接收
 
 ```c++
+#include <Arduino.h>
 #include <IRremoteESP8266.h>
 #include <IRrecv.h>
 #include <IRutils.h>
