@@ -1,3 +1,9 @@
+##
+
+`Serial.begin`
+`pinMode(uint8_t pin, uint8_t mode)`
+`digitalWrite(uint8_t pin, uint8_t val)`
+
 ## FreeRTOS
 
 ```c++
@@ -71,28 +77,23 @@ void loop() {
 
 ```c++
 #include <Arduino.h>
-#include <IRremoteESP8266.h>
 #include <IRrecv.h>
-#include <IRutils.h>
 
 IRrecv irrecv(15);
 decode_results results;
 
 void setup() {
   Serial.begin(115200);
-  sensors.begin();
+  irrecv.enableIRIn();
 }
 
 void loop() {
   if (irrecv.decode(&results))
   {
-    Serial.printf("协议：%d", results.decode_type);
-    Serial.print("|地址：");
-    Serial.print(results.address);
-    Serial.print("|命令：");
-    serialPrintUint64(results.value, HEX);
-    Serial.println("");
     irrecv.resume();
+    if (results.decode_type == -1)
+        continue;
+    Serial.printf("协议：%d|地址：%X|命令：%X|重复：%d\n", results.decode_type, results.address, results.value, results.repeat);
   }
   delay(100)
 }
