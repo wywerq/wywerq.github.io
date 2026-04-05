@@ -50,11 +50,8 @@ void loop() {
     sensors.requestTemperatures();
     float temperatureC = sensors.getTempCByIndex(0);
     float temperatureF = sensors.getTempFByIndex(0);
-    Serial.print("Temperature: ");
-    Serial.print(temperatureC);
-    Serial.print("°C / ");
-    Serial.print(temperatureF);
-    Serial.println("°F");
+    Serial.printf("Temperature：%d°C / %d °F\n", temperatureC, temperatureF);
+    Serial.println("");
     delay(5000);
 }
 ```
@@ -71,4 +68,21 @@ void loop() {
 IRrecv irrecv(15);
 decode_results results;
 
+void setup() {
+    Serial.begin(115200);
+    sensors.begin();
+}
+void loop() {
+    if (irrecv.decode(&results))
+    {
+      Serial.printf("协议：%d", results.decode_type);
+      Serial.print("|地址：");
+      Serial.print(results.address);
+      Serial.print("|命令：");
+      serialPrintUint64(results.value, HEX);
+      Serial.println("");
+      irrecv.resume();
+    }
+    delay(100)
+}
 ```
