@@ -1,10 +1,18 @@
-##
-
-`Serial.begin`
-`pinMode(uint8_t pin, uint8_t mode)`
-`digitalWrite(uint8_t pin, uint8_t val)`
+## Arduino
+### I/O
+[`pinMode(pin, mode)`](https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/)
+[`digitalWrite(pin, val)`](https://docs.arduino.cc/language-reference/en/functions/digital-io/digitalwrite/)
+### Serial
+[`Serial.begin(baud)`](https://docs.arduino.cc/language-reference/en/functions/communication/serial/begin/)
+`Serial.printf(const char *format, ...)`
 
 ## FreeRTOS
+
+| 作用     | 代码                                                                                                                              |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 声明函数 | `void task1(void *pvParameters)`                                                                                                  |
+| 创建任务 | [`xTaskCreate()`](https://www.freertos.org/zh-cn-cmn-s/Documentation/02-Kernel/04-API-references/01-Task-creation/01-xTaskCreate) |
+| 延时     | [`vTaskDelay(pdMS_TO_TICKS(MS))`](https://www.freertos.org/zh-cn-cmn-s/Documentation/02-Kernel/04-API-references/02-Task-control/01-vTaskDelay)    |
 
 ```c++
 #include <Arduino.h>
@@ -98,16 +106,28 @@ void loop() {
   delay(100)
 }
 ```
+####
+```c++
 
+
+```
 ### 发送
 
 ```c++
-#include <IRsend.h>
 #include <ir_Coolix.h> //需要的品牌空调库
 
-IRsend irsend(4);
-IRCoolixAC ac(4);
+IRCoolixAC ac(pin);
 
+ac.begin();
 ac.on();
 ac.send();
+```
+```c++
+#include <IRsend.h>
+
+IRsend irsend(pin);
+
+irsend.begin();
+irsend.sendNEC();
+irsend.sendRaw();
 ```
