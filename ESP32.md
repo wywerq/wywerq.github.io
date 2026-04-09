@@ -1,18 +1,31 @@
 ## Arduino
+
 ### I/O
+
 [`pinMode(pin, mode)`](https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/)
 [`digitalWrite(pin, val)`](https://docs.arduino.cc/language-reference/en/functions/digital-io/digitalwrite/)
+
 ### Serial
+
 [`Serial.begin(baud)`](https://docs.arduino.cc/language-reference/en/functions/communication/serial/begin/)
 `Serial.printf(const char *format, ...)`
 
+## WiFi
+
+| 作用         | 函数                                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------------------- |
+| 初始化       | [`WiFi.begin(ssid, pass)`](https://docs.arduino.cc/language-reference/en/functions/wifi/wificlass/#wifibegin) |
+| 断开连接     | `WiFi.disconnect()`                                                                                           |
+| 返回状态码   | [`WiFi.status()`](https://docs.arduino.cc/language-reference/en/functions/wifi/wificlass/#wifistatus)         |
+| 扫描网络数量 | `WiFi.scanNetworks()`                                                                                         |
+
 ## FreeRTOS
 
-| 作用     | 代码                                                                                                                              |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| 声明函数 | `void task1(void *pvParameters)`                                                                                                  |
-| 创建任务 | [`xTaskCreate()`](https://www.freertos.org/zh-cn-cmn-s/Documentation/02-Kernel/04-API-references/01-Task-creation/01-xTaskCreate) |
-| 延时     | [`vTaskDelay(pdMS_TO_TICKS(MS))`](https://www.freertos.org/zh-cn-cmn-s/Documentation/02-Kernel/04-API-references/02-Task-control/01-vTaskDelay)    |
+| 作用     | 代码                                                                                                                                            |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 声明函数 | `void task1(void *pvParameters)`                                                                                                                |
+| 创建任务 | [`xTaskCreate()`](https://www.freertos.org/zh-cn-cmn-s/Documentation/02-Kernel/04-API-references/01-Task-creation/01-xTaskCreate)               |
+| 延时     | [`vTaskDelay(pdMS_TO_TICKS(MS))`](https://www.freertos.org/zh-cn-cmn-s/Documentation/02-Kernel/04-API-references/02-Task-control/01-vTaskDelay) |
 
 ```c++
 #include <Arduino.h>
@@ -106,11 +119,14 @@ void loop() {
   delay(100)
 }
 ```
+
 ####
+
 ```c++
 
 
 ```
+
 ### 发送
 
 ```c++
@@ -122,6 +138,7 @@ ac.begin();
 ac.on();
 ac.send();
 ```
+
 ```c++
 #include <IRsend.h>
 
